@@ -35,3 +35,135 @@
 </div>
 </div>
 {%- endmacro %}
+
+
+{% macro indented_include(filename, n) -%}{%- filter indent(n) -%}{%- include filename -%}{%- endfilter %}{%- endmacro %}
+
+
+{% macro alert(type="info", title=None) -%}
+{# Alert Types: info, warning, danger, success, etc. #}
+<div class="alert alert-{{ type }}" role="alert" markdown="1">
+  {% if title %}
+    <strong>{{ title }}:</strong>
+  {% endif %}
+  {{ caller() }}
+</div>
+{%- endmacro %}
+
+
+{% macro qtn(question, answer, id="q1") -%}
+{# qtn("What is the capital of France?", "Paris.", "qn1") #}
+  <div class="mb-3" markdown="1">
+    <div class="d-flex justify-content-between align-items-center">
+      <strong>{{ question }}</strong>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
+        Show Answer
+      </button>
+    </div>
+    <div id="{{ id }}" class="collapse mt-2">
+      <div class="card card-body">
+        {{ answer }}
+      </div>
+    </div>
+  </div>
+{%- endmacro %}
+
+
+{% macro fitb(question, correct_answer, id="q2") -%}
+{# fitb("What is 2 + 2?", "4", "qn2") #}
+  <div class="mb-3" markdown="1">
+    <div>
+      <strong>{{ question }}</strong>
+    </div>
+    <div class="input-group mt-2">
+      <input type="text" class="form-control" id="{{ id }}-input" placeholder="Type your answer here">
+      <button class="btn btn-primary" type="button" onclick="checkAnswer('{{ id }}', '{{ correct_answer }}')">Check Answer</button>
+    </div>
+    <div id="{{ id }}-feedback" class="mt-2"></div>
+  </div>
+
+  <script>
+    function checkAnswer(id, correctAnswer) {
+      var userAnswer = document.getElementById(id + '-input').value.trim().toLowerCase();
+      var feedbackElement = document.getElementById(id + '-feedback');
+      
+      if (userAnswer === correctAnswer.trim().toLowerCase()) {
+        feedbackElement.innerHTML = '<div class="alert alert-success" role="alert">Correct!</div>';
+      } else {
+        feedbackElement.innerHTML = '<div class="alert alert-danger" role="alert">Incorrect. Try again!</div>';
+      }
+    }
+  </script>
+{%- endmacro %}
+
+
+{% macro mcq(question, options, correct_answer, hint=None, explanation=None, id="mcq") -%}
+{# mcq(
+  "What is 5 + 7?", 
+  ["10", "11", "12", "13"], 
+  "12", 
+  "Think about simple addition.", 
+  "5 + 7 equals 12 because it’s a basic arithmetic sum."
+) #}
+  <div class="mb-3" markdown="1">
+    <div><strong>{{ question }}</strong></div>
+    
+    <div class="mt-2">
+      {% for option in options %}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="{{ id }}-options" id="{{ id }}-option-{{ loop.index }}" value="{{ option }}">
+          <label class="form-check-label" for="{{ id }}-option-{{ loop.index }}">
+            {{ option }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="btn btn-primary mt-3" type="button" onclick="checkMCQAnswer('{{ id }}', '{{ correct_answer }}', '{{ hint|default('') }}', '{{ explanation|default('') }}')">Check Answer</button>
+
+    <div id="{{ id }}-feedback" class="mt-3"></div>
+    <div id="{{ id }}-hint" class="mt-3" style="display:none;"></div>
+    <div id="{{ id }}-explanation" class="mt-3" style="display:none;"></div>
+  </div>
+
+  <script>
+    function checkMCQAnswer(id, correctAnswer, hint, explanation) {
+      var selectedOption = document.querySelector('input[name="' + id + '-options"]:checked');
+      var feedbackElement = document.getElementById(id + '-feedback');
+      var hintElement = document.getElementById(id + '-hint');
+      var explanationElement = document.getElementById(id + '-explanation');
+
+      // Reset feedback, hint, and explanation
+      feedbackElement.innerHTML = '';
+      hintElement.style.display = 'none';
+      explanationElement.style.display = 'none';
+
+      if (selectedOption) {
+        var userAnswer = selectedOption.value.trim().toLowerCase();
+        
+        // Check if the answer is correct
+        if (userAnswer === correctAnswer.trim().toLowerCase()) {
+          feedbackElement.innerHTML = '<div class="alert alert-success" role="alert">Correct!</div>';
+          
+          // Show explanation only if the answer is correct
+          if (explanation) {
+            explanationElement.style.display = 'block';
+            explanationElement.innerHTML = '<strong>Explanation:</strong> ' + explanation;
+          }
+        } else {
+          feedbackElement.innerHTML = '<div class="alert alert-danger" role="alert">Incorrect. Try again!</div>';
+          
+          // Show hint only if the answer is incorrect
+          if (hint) {
+            hintElement.style.display = 'block';
+            hintElement.innerHTML = '<strong>Hint:</strong> ' + hint;
+          }
+        }
+      } else {
+        feedbackElement.innerHTML = '<div class="alert alert-warning" role="alert">Please select an answer.</div>';
+      }
+    }
+  </script>
+{%- endmacro %}
+
+

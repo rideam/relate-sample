@@ -17,7 +17,10 @@ pages:
     id: intro
     content: |
 
-        # A little distraction to start
+        # Laws of Indices 
+
+        {% from "content-macros.jinja" import indented_include %}
+        {{ indented_include("pages/indices.md", 0) }}
 
         Yadda yadda.
 
