@@ -19,4 +19,4 @@ When multiplying numbers in the same base the base is maintained and the powers 
 #### Examples
 
 {% from "content-macros.jinja" import qtn %}
-{{ qtn(r"$x^2 \times x^3$", r"$$\begin{align} x^2 \times x^3 &= x^{2+3} \\ &= x^5 \end{align}$$", "qn1") }}
+{{ qtn("""$x^2 \times x^3$""", """$$\begin{align} x^2 \times x^3 &= x^{2+3} \\ &= x^5 \end{align}$$""", "qn1") }}
