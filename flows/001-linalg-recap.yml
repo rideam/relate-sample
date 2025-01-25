@@ -20,7 +20,7 @@ pages:
         # Laws of Indices 
 
         {% from "content-macros.jinja" import indented_include %}
-        {{ indented_include("pages/indices.md", 0) }}
+        {{ indented_include("markdown/indices.md", 0) }}
 
         Yadda yadda.
 
