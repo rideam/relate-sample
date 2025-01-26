@@ -1,4 +1,5 @@
 {% from "content-macros.jinja" import qtn, mcq, alert, jsscripts  %}
+{{ jsscripts() }}
 
 {% call alert(type="info", title="") %}
   Understanding indices
@@ -24,6 +25,8 @@ When multiplying numbers in the same base the base is maintained and the powers 
 
 
 {{ qtn("What is the capital of France", "Paris", "qn1") }}
+
+{{ fitb("What is 2 + 2?", "4", "qn2") }}
 
 {{ mcq(
   "What is the capital of France?", 
