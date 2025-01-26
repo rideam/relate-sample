@@ -1,4 +1,4 @@
-{% from "content-macros.jinja" import qtn, mcq, alert %}
+{% from "content-macros.jinja" import qtn, mcq, alert, jsscripts  %}
 
 {% call alert(type="info", title="") %}
   Understanding indices

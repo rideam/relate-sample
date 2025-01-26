@@ -111,11 +111,16 @@
       {% endfor %}
     </div>
 
-    <button class="btn btn-primary mt-3" type="button" onclick="checkMCQAnswer('{{ id }}', '{{ correct_answer }}', '{{ hint|default('') }}', '{{ explanation|default('') }}')">Check Answer</button>
+    <div class="card card-body">
 
-    <div id="{{ id }}-feedback" class="mt-3"></div>
-    <div id="{{ id }}-hint" class="mt-3" style="display:none;"></div>
-    <div id="{{ id }}-explanation" class="mt-3" style="display:none;"></div>
+      <div id="{{ id }}-feedback" class="mt-3"></div>
+      <div id="{{ id }}-hint" class="mt-3" style="display:none;"></div>
+      <div id="{{ id }}-explanation" class="mt-3" style="display:none;"></div>
+
+    </div>
+
+    <button class="btn btn-primary mt-3" type="button" onclick="checkMCQAnswer('{{ id }}', '{{ correct_answer| escape  }}', '{{ hint|default('')| escape  }}', '{{ explanation|default('')| escape  }}')">Check Answer</button>
+
   </div>
 {%- endmacro %}
 
