@@ -43,14 +43,11 @@
 {% macro alert(type="info", title=None) -%}
 {# Alert Types: info, warning, danger, success, etc. #}
 {# 
-{% call alert(type="info", title="Success!") %}
+{% call alert(type="info") %}
   Your operation was completed successfully.
 {% endcall %}
 #}
-<div class="alert alert-{{ type }}" role="alert">
-  {% if title %}
-    <strong>{{ title }}:</strong>
-  {% endif %}
+<div class="alert alert-{{ type }}" role="alert" markdown="1">
   {{ caller() }}
 </div>
 {%- endmacro %}
@@ -111,15 +108,11 @@
       {% endfor %}
     </div>
 
-
-
     <div id="{{ id }}-feedback" class="mt-3"></div>
     <div id="{{ id }}-hint" class="mt-3" style="display:none;"></div>
     <div id="{{ id }}-explanation" class="mt-3" style="display:none;"></div>
 
-
     <button class="btn btn-primary mt-3" type="button" onclick="checkMCQAnswer('{{ id }}', '{{ correct_answer  }}', '{{ hint|default('') }}', '{{ explanation|default('')  }}')">Check Answer</button>
-
   </div>
 {%- endmacro %}
 

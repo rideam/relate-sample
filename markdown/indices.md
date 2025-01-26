@@ -1,8 +1,12 @@
 {% from "content-macros.jinja" import qtn, mcq, fitb, alert, jsscripts  %}
 {{ jsscripts() }}
 
-{% call alert(type="info", title="") %}
-  Understanding indices
+{% call alert(type="info") %}
+
+**Learning Objectives:**
+
+- Understanding indices
+- Solving indices problems
 {% endcall %}
 
 
@@ -29,12 +33,19 @@ When multiplying numbers in the same base the base is maintained and the powers 
 {{ fitb("What is 2 + 2?", "4", "qn2") }}
 
 {{ mcq(
-  "What is the capital of France?", 
-  ["Paris", "Berlin", "Madrid", "Rome"], 
-  "Paris", 
-  "It's a city of art, fashion, and culture.", 
-  "Paris is the capital of France and home to many cultural landmarks like the Eiffel Tower and the Louvre Museum.",
+  question="What is the capital of France?", 
+  options=["Paris", "Berlin", "Madrid", "Rome"], 
+  correct_answer="Paris", 
+  hint="It's a city of art, fashion, and culture."|replace("'", "\\'"), 
+  explanation="Paris is the capital of France and home to many cultural landmarks like the Eiffel Tower and the Louvre Museum.",
   id="mcq1_indices"
 ) }}
 
-{{ mcq("What is $5 + 7$?", ["10", "11", "12", "13"], "12", "Think about simple addition.", "5 + 7 equals 12 because it’s a basic arithmetic sum.",id="mcq2_indices") }}
+{{ mcq(
+  question="What is $5 + 7$?", 
+  options=["10", "11", "12", "13"], 
+  correct_answer="12", 
+  hint="Think about simple addition.", 
+  explanation="5 + 7 equals 12 because it’s a basic arithmetic sum.",
+  id="mcq2_indices"
+) }}
