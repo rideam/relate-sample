@@ -1,4 +1,4 @@
-{% from "content-macros.jinja" import qtn, mcq, alert, jsscripts  %}
+{% from "content-macros.jinja" import qtn, mcq, fitb, alert, jsscripts  %}
 {{ jsscripts() }}
 
 {% call alert(type="info", title="") %}
