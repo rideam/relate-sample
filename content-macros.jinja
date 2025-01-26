@@ -55,7 +55,7 @@
 
 {% macro qtn(question, answer, id="q1") -%}
 {# qtn("What is the capital of France?", "Paris.", "qn1") #}
-  <div class="mb-3">
+  <div class="mb-4">
     <div class="">
       <strong markdown="1"> {{ question }} </strong>
     </div>
@@ -73,13 +73,16 @@
 
 {% macro fitb(question, correct_answer, id="q2") -%}
 {# fitb("What is 2 + 2?", "4", "qn2") #}
-  <div class="mb-3">
+  <div class="mb-4">
     <div>
       <strong>{{ question }}</strong>
     </div>
-    <div class="input-group mt-2">
-      <input type="text" class="form-control" id="{{ id }}-input" placeholder="Type your answer here">
-      <button class="btn btn-primary" type="button" onclick="checkAnswer('{{ id }}', '{{ correct_answer }}')">Check Answer</button>
+
+    <div class="col-md-4">
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" id="{{ id }}-input" placeholder="Type your answer here">
+        <button class="btn btn-primary" type="button" onclick="checkAnswer('{{ id }}', '{{ correct_answer }}')">Check Answer</button>
+      </div>
     </div>
     <div id="{{ id }}-feedback" class="mt-2"></div>
   </div>
@@ -94,7 +97,7 @@
   "Think about simple addition.", 
   "5 + 7 equals 12 because it’s a basic arithmetic sum."
 ) #}
-  <div class="mb-3">
+  <div class="mb-4">
     <div><strong markdown="1">{{ question }}</strong></div>
     
     <div class="mt-2">
@@ -112,7 +115,7 @@
     <div id="{{ id }}-hint" class="mt-3" style="display:none;"></div>
     <div id="{{ id }}-explanation" class="mt-3" style="display:none;"></div>
 
-    <button class="btn btn-primary mt-3" type="button" onclick="checkMCQAnswer('{{ id }}', '{{ correct_answer  }}', '{{ hint|default('') }}', '{{ explanation|default('')  }}')">Check Answer</button>
+    <button class="btn btn-primary" type="button" onclick="checkMCQAnswer('{{ id }}', '{{ correct_answer  }}', '{{ hint|default('') }}', '{{ explanation|default('')  }}')">Check Answer</button>
   </div>
 {%- endmacro %}
 

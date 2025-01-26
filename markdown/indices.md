@@ -28,12 +28,12 @@ When multiplying numbers in the same base the base is maintained and the powers 
 #### Examples
 
 
-{{ qtn("What is the capital of France", "Paris", "qn1") }}
+{{ qtn("1. What is the capital of France", "Paris", "qn1") }}
 
-{{ fitb("What is 2 + 2?", "4", "qn2") }}
+{{ fitb("2. What is 2 + 2?", "4", "qn2") }}
 
 {{ mcq(
-  question="What is the capital of France?", 
+  question="3. What is the capital of France?", 
   options=["Paris", "Berlin", "Madrid", "Rome"], 
   correct_answer="Paris", 
   hint="It's a city of art, fashion, and culture."|replace("'", "\\'"), 
@@ -42,7 +42,7 @@ When multiplying numbers in the same base the base is maintained and the powers 
 ) }}
 
 {{ mcq(
-  question="What is $5 + 7$?", 
+  question="4. What is $5 + 7$?", 
   options=["10", "11", "12", "13"], 
   correct_answer="12", 
   hint="Think about simple addition.", 
