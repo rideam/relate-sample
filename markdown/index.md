@@ -1,22 +1,33 @@
+<style>
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+</style>
 
 # Mathematics 
+
 Ordinary Level
 
-## Syllabus
+### <i class="bi bi-folder2-open me-2"></i> Syllabus
 
-- [ZIMSEC Mathematics Ordinary Level Syllabus](repocur:pdfs/sample.pdf)
+- [ZIMSEC Mathematics O Level <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf) 
 
-## Textbooks
+### <i class="bi bi-book me-2"></i> Textbooks
 
-- [New general mathematics book 1](repocur:pdfs/sample.pdf)
-- New general mathematics book 2
+- [New General Mathematics Book 1 <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf) 
+- [Mathematics Today Book 3 <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf) 
 
-## Lessons
+### <i class="bi bi-journal-bookmark-fill me-2"></i> Lessons
 
-- Lesson: [Algebra](staticpage:test) <i class="bi bi-dot"></i> [Exercise](flow:quiz-test)
-- Lesson: Matrices . Exercise
+- Lesson: [Algebra](flow:001-linalg-recap) <i class="bi bi-dot"></i> [Summary](staticpage:test) <i class="bi bi-dot"></i> [Exercise](flow:quiz-test)
+- Lesson: [Matrices](flow:001-linalg-recap) <i class="bi bi-dot"></i> [Summary](staticpage:test) <i class="bi bi-dot"></i> [Exercise](flow:quiz-test)
 
-## Past Exam Papers
+### <i class="bi bi-patch-question me-2"></i> Past Exam Papers
 
-- 2024:  Paper 1 . Paper 2
-- 2023:  Paper 1 . Paper 2
+- 2024
+    * [Paper 1 <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf) </i> <i class="bi bi-dot"></i> [Marking Scheme <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf) 
+    * [Paper 2 <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf) </i> <i class="bi bi-dot"></i> [Marking Scheme <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf)
+- 2023:
+    * [Paper 1 <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf) </i> <i class="bi bi-dot"></i> [Marking Scheme <i class="bi bi-file-earmark-pdf text-danger"></i>](repocur:pdfs/sample.pdf)
+       
