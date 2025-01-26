@@ -1,4 +1,4 @@
-{% from "yaml-macros.yml" import indented_include %}
+
 
 chunks:
 
@@ -15,7 +15,9 @@ chunks:
         weight: 0
 
     content: |
-
+    
+        {% from "content-macros.jinja" import indented_include %}
+        
         {{ indented_include("markdown/index.md", 0) }}
 
 
