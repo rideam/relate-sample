@@ -37,11 +37,4 @@ When multiplying numbers in the same base the base is maintained and the powers 
   id="mcq1_indices"
 ) }}
 
-{{ mcq(
-  "What is $5 + 7$?", 
-  ["10", "11", "12", "13"], 
-  "12", 
-  "Think about simple addition.", 
-  "5 + 7 equals 12 because it’s a basic arithmetic sum.",
-  id="mcq2_indices"
-) }}
+{{ mcq("What is $5 + 7$?", ["10", "11", "12", "13"], "12", "Think about simple addition.", "5 + 7 equals 12 because it’s a basic arithmetic sum.",id="mcq2_indices") }}
