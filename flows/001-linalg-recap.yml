@@ -2,6 +2,9 @@ title: "Linear Algebra"
 description: |
     # Linear Algebra Recap
 
+    - Laws of indices
+    - Vectors
+
 rules:
     access:
     -
