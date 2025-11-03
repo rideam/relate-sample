@@ -1,9 +1,14 @@
-title: "Static Page"
-content: |
+chunks:
 
-    # test title
+-
 
-    {% from "content-macros.jinja" import indented_include %}
-    {{ indented_include("markdown/indices.md", 0) }}
+    title: "Welcome to the course"
+    id: welcome
+    content: |
 
-    I am just a simple demo page. Go back to the [course page](course:)?
+        # test title
+
+        {% from "content-macros.jinja" import indented_include %}
+        {{ indented_include("markdown/indices.md", 0) }}
+
+        I am just a simple demo page. Go back to the [course page](course:)?
