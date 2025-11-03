@@ -1,6 +1,8 @@
 title: "Static Page"
 content: |
 
+    # test title
+
     {% from "content-macros.jinja" import indented_include %}
     {{ indented_include("markdown/indices.md", 0) }}
 
