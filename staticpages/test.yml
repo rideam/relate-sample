@@ -1,3 +1,4 @@
+title: "Static Page"
 content: |
 
     {% from "content-macros.jinja" import indented_include %}
