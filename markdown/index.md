@@ -19,7 +19,7 @@
     margin-left: 8px;
   }
 
-  #cnt ul li::before {
+  /* #cnt ul li::before {
     content: "✓";
     position: absolute;
     left: 0;
@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 4px;
-  }
+  } */
 </style>
 
 <div id="cnt" markdown="1">

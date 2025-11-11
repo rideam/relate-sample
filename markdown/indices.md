@@ -1,5 +1,5 @@
 {% from "content-macros.jinja" import qtn, mcq, fitb, alert, jsscripts  %}
-{{ jsscripts() }}
+
 
 {% call alert(type="info") %}
 
@@ -49,3 +49,7 @@ When multiplying numbers in the same base the base is maintained and the powers 
   explanation="5 + 7 equals 12 because it’s a basic arithmetic sum.",
   id="mcq2_indices"
 ) }}
+
+
+
+{{ jsscripts() }}
