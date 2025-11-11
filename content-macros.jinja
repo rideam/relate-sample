@@ -106,7 +106,7 @@
 
     <div class="col-md-4">
       <div class="input-group mt-2">
-        <input type="text" class="form-control" id="{{ id }}-input" placeholder="Type your answer here">
+        <input data-dynamic type="text" class="form-control" id="{{ id }}-input" placeholder="Type your answer here">
         <button class="btn btn-primary" type="button" onclick="checkAnswer('{{ id }}', '{{ correct_answer }}')">Check Answer</button>
       </div>
     </div>
@@ -129,7 +129,7 @@
     <div class="mt-2">
       {% for option in options %}
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="{{ id }}-options" id="{{ id }}-option-{{ loop.index }}" value="{{ option }}">
+          <input data-dynamic class="form-check-input" type="radio" name="{{ id }}-options" id="{{ id }}-option-{{ loop.index }}" value="{{ option }}">
           <label class="form-check-label" for="{{ id }}-option-{{ loop.index }}">
             {{ option }}
           </label>
@@ -148,6 +148,12 @@
 
 {% macro jsscripts() -%}
  <script>
+    document.addEventListener("input", e => {
+      if (e.target.matches("[data-dynamic]")) {
+        e.target.defaultValue = e.target.value;
+      }
+    });
+
     function checkAnswer(id, correctAnswer) {
       var userAnswer = document.getElementById(id + '-input').value.trim().toLowerCase();
       var feedbackElement = document.getElementById(id + '-feedback');
